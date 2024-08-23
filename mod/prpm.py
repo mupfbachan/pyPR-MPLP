@@ -6,6 +6,39 @@ def init(delete_cache=False,
          font_size=12, font_family='sans-serif', font='default', 
          canvas_columns=1, canvas_width_cm=16, aratio=[6.4, 4.8],
          dpi=96):
+    '''
+    Parameters
+        ----------
+        delete_cache : bool
+            Specify if previous plots in a script are deleted or not
+        font_size : int
+            Sets the *medium* font size of the plot.
+            Matplotlib uses relative expressions: 
+                xx-small, x-small, small, medium, large, x-large, xx-large, larger
+            Example font size specifications (can be adjusted by user in `prpm.py`:
+                plt.rcParams['axes.titlesize'] = 'medium'
+                plt.rcParams['axes.labelsize'] = 'medium'
+                plt.rcParams['legend.fontsize'] = 'medium'
+                plt.rcParams['xtick.labelsize'] = 'small'
+                plt.rcParams['ytick.labelsize'] = 'small'
+        font_family : string
+            Sets mathtext.fontset to 'cm' (Computer Modern)
+            User input can specify if font type is 'sans-serif' or 'serif'
+        font : string
+            Uses either 'default' fonts for chosen font family (needs to be installed on current os and accessible via the python terminal) or a user specified font given by the correct name.
+        canvas_columns : int [1,2,3]
+            Sets the figure size of the plot so that the specified number fit into the canvas width defined by 'canvas_width_cm'.
+        canvas_width_cm : float
+            Available canvas width (e.g. text width) in document (Unit: cm)
+        aratio : tuple or list of int
+            Defines the desired aspect ratio of the plot width:height
+                (e.g. golden ratio: [1.62, 1])
+        dpi : int
+            Sets figure dpi (quality, size on display)
+
+        Returns
+        -------
+    '''
     #---- Reset rcParams to default
     plt.rcdefaults() 
     #%% FONTS  
