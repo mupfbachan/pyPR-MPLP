@@ -125,9 +125,7 @@ if plot_style.execute_save == True:
 An example code is provided in the `main.py` script in this repository.
 Code tested with ...
 
-
 ... *miniconda* distribution environment
-
 
 ... *python version* `3.10.14`
 
