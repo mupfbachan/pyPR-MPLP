@@ -1,5 +1,5 @@
 """
-Python Database for KIT - Colors
+Python global variable database for KIT - colors (corporate design)
 -> initialize your color palette in every code
 =====
 """
