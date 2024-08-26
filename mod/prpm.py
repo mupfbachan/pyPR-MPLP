@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
-def init(delete_cache=False, 
+def init(delete_cache=False, save_fig=False, name='no_name',
          font_size=12, font_family='sans-serif', font='default', 
          canvas_columns=1, canvas_width_cm=16, aratio=[6.4, 4.8],
          dpi=96):
@@ -11,6 +11,10 @@ def init(delete_cache=False,
         ----------
         delete_cache : bool
             Specify if previous plots in a script are deleted or not
+        save_fig : bool
+            Specify plot save execution argument for figure export
+        name : string
+            Specification of a plot name (export name allocation)
         font_size : int
             Sets the *medium* font size of the plot.
             Matplotlib uses relative expressions: 
@@ -38,9 +42,16 @@ def init(delete_cache=False,
 
         Returns
         -------
+        execute_save : bool
+            GLOBAL parameter (accessible by **.execute_save)
+        set_name : bool
+            GLOBAL parameter (accessible by **.set_name)
     '''
     #---- Reset rcParams to default
-    plt.rcdefaults() 
+    plt.rcdefaults()
+    
+    #---- Set global parameters
+    global execute_save, set_name
     #%% FONTS  
     #%%% -> Family
     plt.rcParams['mathtext.fontset'] = 'cm'
@@ -170,4 +181,9 @@ def init(delete_cache=False,
     #%% Other
     if delete_cache == True: 
         plt.close('all')
+    else: pass
+
+    if save_fig == True: 
+        execute_save = True
+        set_name = name
     else: pass
