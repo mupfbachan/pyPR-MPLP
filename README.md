@@ -119,10 +119,16 @@ if plot_style.execute_save == True:
 # !!!!! End or Continuation of python script
 # ##############################################
 ```
+
 ## Example python code
 
-An example code is provided in the `main.py` script in this repository. 
+An example code is provided in the `main.py` script in this repository.
 Code tested with ...
+
+
 ... *miniconda* distribution environment
+
+
 ... *python version* `3.10.14`
+
 ... *matplotlib version* `3.8.4`
