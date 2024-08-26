@@ -1,19 +1,22 @@
-#%% Import externer Packete
+#%% Import of external packages (*distibution*/../ -> python environment)
 import numpy as np
 import matplotlib.pyplot as plt
 plt.close('all')
 
-#%% Import eigener Packete
+#%% Import of internal packages (./ -> working directory)
+# Import and init. of "corporate" colors
 import mod.kitc as kit; kit.init()
-import mod.prpm as plot_style
+# Import of custom plot style framework
+import mod.prpm as plot_style 
 
-# allgemeine Initialisierung der plot konfiguration
-plot_style.init(delete_cache=False, 
+# Script layer -> initialization of selected matplotlib parameters
+plot_style.init(delete_cache=False, save_fig=False, name='no_name',
                 font_size=12, font_family='sans-serif', font='Arial',
                 canvas_columns=1, canvas_width_cm=16, aratio=[1, 1])
 
-#%% Beispielabbildung ganze Breite
-plot_style.init(delete_cache=False, 
+#%% Example #1 - Plot fitting whole width of document
+# Individual plot layer -> (Re-)initialization of mpl parammeters
+plot_style.init(delete_cache=False, save_fig=True, name='example_plot_1', 
                 font_size=12, font_family='serif', font='Latin Modern Roman',
                 canvas_columns=1, canvas_width_cm=15.99, aratio=[2, 1])
 
@@ -37,7 +40,7 @@ ax.scatter([0.1,0.2,0.3,0.4], # x-data
             label='Scatter' # name of data (for legend referencing)
             )
 
-# ---- Options: Axes
+# ---- Options: Axes & Layout
 # --- Labels
 ax.set_xlabel('Publication ready label $x$ /-') # define the axis label
 ax.set_ylabel('Publication ready label $y$ /-')
@@ -64,8 +67,13 @@ elif layout_type == 'h':
         hspace=0.2,
         wspace=0.2)
     
-#%% Beispielabbildung halbe Breite
-plot_style.init(delete_cache=False, 
+# ---- Optional: Plot export
+if plot_style.execute_save == True:
+    fig.savefig('export/'+f'{plot_style.set_name}'+ '.pdf')
+    
+#%% Example #2 - Plot fitting half width of document
+# Individual plot layer -> (Re-)initialization of mpl parammeters
+plot_style.init(delete_cache=False, save_fig=False, name='example_plot_2',  
                 font_size=12, font_family='serif', font='Latin Modern Roman',
                 canvas_columns=2, canvas_width_cm=15.99, aratio=[1.1, 1])
 
@@ -89,7 +97,7 @@ ax.scatter([0.1,0.2,0.3,0.4], # x-data
             label='Scatter' # name of data (for legend referencing)
             )
 
-# ---- Options: Axes
+# ---- Options: Axes & Layout
 # --- Labels
 ax.set_xlabel('Publication ready label $x$ /-') # define the axis label
 ax.set_ylabel('Publication ready label $y$ /-')
@@ -100,7 +108,7 @@ ax.set_yscale('linear') # choose between 'linear' and 'log'
 ax.set_xlim(left=0,right=0.5)
 ax.set_ylim(bottom=None,top=0.5)
 # --- Legend
-ax.legend(loc='lower left', fontsize='small', framealpha=1, ncol=1)
+ax.legend(loc='upper left', fontsize='small', framealpha=1, ncol=1)
 # --- Layout
 layout_type = 'constrained' # 't' # 'h'
 
@@ -115,3 +123,7 @@ elif layout_type == 'h':
         right=0.845,
         hspace=0.2,
         wspace=0.2)
+    
+# ---- Options: Plot export
+if plot_style.execute_save == True:
+    fig.savefig('export/'+f'{plot_style.set_name}'+ '.pdf')
