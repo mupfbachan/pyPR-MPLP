@@ -1,9 +1,9 @@
-#%% Import of external packages (*distibution*/../ -> python environment)
+#%% Import of external packages (*distibution*/../  ->  python environment)
 import numpy as np
 import matplotlib.pyplot as plt
 plt.close('all')
 
-#%% Import of internal packages (./ -> working directory)
+#%% Import of internal packages (./  ->  working directory)
 # Import and init. of "corporate" colors
 import mod.kitc as kit; kit.init()
 # Import of custom plot style framework
