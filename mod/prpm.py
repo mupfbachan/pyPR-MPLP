@@ -186,4 +186,5 @@ def init(delete_cache=False, save_fig=False, name='no_name',
     if save_fig == True: 
         execute_save = True
         set_name = name
-    else: pass
+    else:
+        execute_save = False
