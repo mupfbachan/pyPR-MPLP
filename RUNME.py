@@ -1,3 +1,6 @@
+'''
+~~ Run this python script for a demonstration of the python module pyPR-MPLP ~~ 
+'''
 #%% Import of external packages (*distibution*/../  ->  python environment)
 import numpy as np
 import matplotlib.pyplot as plt
